@@ -211,7 +211,7 @@ If you have too many parameters to fit on one line, giving each its own line is 
 ```objective-c
 - (void)initWithPosition:(Vector *)position 
                 velocity:(Vector *)velocity 
-            acceleration:(Vector *acceleration) {
+            acceleration:(Vector *)acceleration {
     ...
 }
 
@@ -221,7 +221,7 @@ When the first keyword is shorter than the others, indent the later lines by at 
 ```objective-c
 - (void)position:(Vector *)position
     maximumVelocity:(Vector *)velocity
-       acceleration:(Vector *acceleration) {
+       acceleration:(Vector *)acceleration {
      ...
 }
 
