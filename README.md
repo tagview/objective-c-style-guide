@@ -23,7 +23,7 @@ typedef enum Solvers : NSUInteger {
 
 @property (nonatomic, assign) CGFloat friction;
 @property (nonatomic, strong) Vector *position;
-@property (nonatomic, strong) Vector *velocity;
+@property (nonatomic, readonly) Vector *velocity;
 @property (nonatomic, assign) IntegrationMethod integrationMethod;
 @property (nonatomic, assign, getter = isFixed) BOOL fixed;
 
@@ -42,6 +42,7 @@ typedef enum Solvers : NSUInteger {
 ```objective-c
 @interface Particle ()
 
+@property (nonatomic, strong) Vector *velocity;
 @property (nonatomic, strong) Vector *acceleration;
 @property (nonatomic, strong) Vector *previousPosition;
 
