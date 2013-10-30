@@ -138,7 +138,7 @@ typedef enum Solvers : NSUInteger {
 
 ### Whitespace
 
-Put one space before a leading brace, `if`s, `while`s, `for`s, `switche`s, `properties`.
+Put one space before leading braces, `ifs`, `whiles`, `fors`, `switches`, and `@properties`.
 ```objective-c
 // Bad
 if(!_name){
@@ -252,6 +252,51 @@ NSArray *array = @[
     @"Two", 
     @"Three"
 ];
+```
+
+### Line Breaks
+
+**Don't** put a line break after `ifs`, `whiles`, `fors`, and `switches`.
+```objective-c
+// Bad
+if (!_name )
+{
+    _name = @"Default";
+}
+
+// Good
+if (!_name) {
+    _name = @"Default";
+}
+```
+
+**Don't** put a line break before a method definition block.
+```objective-c
+// Bad
+- (void)initWithPosition:(Vector *)position
+{
+    ...
+}
+
+// Good
+- (void)initWithPosition:(Vector *)position {
+    ...
+}
+```
+
+Put line breaks between `@properties` and method definitions.
+```objective-c
+// Bad
+@interface Particle : NSObject <Springable>
+@property (nonatomic, assign, getter = isFixed) BOOL fixed;
++ (Particle *)fixedParticleAtPosition:(Vector *)position;
+
+// Good
+@interface Particle : NSObject <Springable>
+
+@property (nonatomic, assign, getter = isFixed) BOOL fixed;
+
++ (Particle *)fixedParticleAtPosition:(Vector *)position;
 ```
 
 ### Import vs Include
