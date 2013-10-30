@@ -253,4 +253,19 @@ NSArray *array = @[
     @"Three"
 ];
 ```
+
+### Import vs Include
+
+Choose between `#import` and `#include` based on the language of the header that you are including.
+
+- When including a header that uses Objective-C or Objective-C++, use `#import`
+- When including a standard C or C++ header, use `#include`
+
+```objective-c
+#import <Cocoa/Cocoa.h>
+#include <CoreFoundation/CoreFoundation.h>
+#import "GTMFoo.h"
+#include "base/basictypes.h"
 ```
+
+For more information on this topic, see [this Stackoverflow answer on the subject](http://stackoverflow.com/a/4219472).
