@@ -299,6 +299,50 @@ Put line breaks between `@properties` and method definitions.
 + (Particle *)fixedParticleAtPosition:(Vector *)position;
 ```
 
+### Properties
+
+Always use properties instead of message passing when possible.
+```objective-c
+// Bad
+if ([array count] > 10) {
+    ...
+}
+
+// Good
+if (array.count > 10) {
+    ...
+}
+
+// Bad
+[view setHidden:NO];
+
+// Good
+view.hidden = YES;
+```
+
+Don't use getters and setters during object initialization, instead, access the instance variables directly.
+```objective-c
+// Bad
+- (id)initWithPosition:(Vector *)position velocity:(Vector *)velocity {
+    if (self = [super init]) {
+        self.position = position;
+        self.velocity = velocity;
+    }
+
+    return self;
+}
+
+// Good
+- (id)initWithPosition:(Vector *)position velocity:(Vector *)velocity {
+    if (self = [super init]) {
+        _position = position;
+        _velocity = velocity;
+    }
+
+    return self;
+}
+```
+
 ### Import vs Include
 
 Choose between `#import` and `#include` based on the language of the header that you are including.
