@@ -224,5 +224,33 @@ When the first keyword is shorter than the others, indent the later lines by at 
        acceleration:(Vector *)acceleration {
     ...
 }
+```
 
+#### Container Literals
+
+If the collection fits on one line, put a single space after the opening and before the closing brackets.
+```objective-c
+// Bad
+NSArray *array = @[@"One", @"Two", @"Three"];
+NSArray *array = @[@"One",@"Two",@"Three"];
+
+// Good
+NSArray *array = @[ @"One", @"Two", @"Three" ];
+
+
+// Bad
+NSDictionary *dict = @{@"firstName":@"Rodrigo", @"lastName":@"Navarro" };
+
+// Good
+NSDictionary *dict = @{ @"firstName": @"Rodrigo", @"lastName": @"Navarro" };
+```
+
+If the collection spans more than a single line, place the opening bracket on the same line as the declaration, indent the body by four spaces, and place the closing bracket on a new line that is indented to the same level as the opening bracket.
+```objective-c
+NSArray *array = @[
+    @"One", 
+    @"Two", 
+    @"Three"
+];
+```
 ```
