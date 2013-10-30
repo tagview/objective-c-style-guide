@@ -133,3 +133,96 @@ typedef enum Solvers : NSUInteger {
 
 @end
 ```
+
+## Guidelines
+
+### Whitespace
+
+Put one space before a leading brace, `if`s, `while`s, `for`s, `switche`s, `properties`.
+```objective-c
+// Bad
+if(!_name){
+    _name = @"Default";
+}
+
+// Good
+if (!_name) {
+    _name = @"Default";
+}
+
+
+// Bad
+@property(nonatomic, strong)Vector *velocity;
+
+// Good
+@property (nonatomic, strong) Vector *velocity;
+```
+
+**Don't** put a spaces between parentheses.
+```objective-c
+// Bad
+if ( !_name ) {
+    _name = @"Default";
+}
+
+// Good
+if (!_name) {
+    _name = @"Default";
+}
+```
+
+#### Method declaration and invocation
+
+Put a space after the `-` or `+`.
+```objective-c
+// Bad
+-(void)activate;
+
+// Good
+- (void)activate;
+```
+
+Put a space before the asterisks.
+```objective-c
+// Bad
+- (void)setVelocity:(Vector*)velocity;
+
+// Good
+- (void)setVelocity:(Vector *)velocity;
+```
+
+**Don't** put a spaces on method arguments and on method declarations.
+```objective-c
+// Bad
+User *user = [[User alloc] initWithFirstName: @"Rodrigo" lastName: @"Navarro"];
+
+// Good
+User *user = [[User alloc] initWithFirstName:@"Rodrigo" lastName:@"Navarro"];
+
+
+// Bad
+- (void)setVelocity: (Vector *)velocity;
+
+// Good
+- (void)setVelocity:(Vector *)velocity;
+```
+
+If you have too many parameters to fit on one line, giving each its own line is preferred. If multiple lines are used, align each using the colon before the parameter.
+```objective-c
+- (void)initWithPosition:(Vector *)position 
+                velocity:(Vector *)velocity 
+            acceleration:(Vector *acceleration) {
+    ...
+}
+
+```
+
+When the first keyword is shorter than the others, indent the later lines by at least four spaces, maintaining colon alignment:
+```objective-c
+- (void)position:(Vector *)position
+    maximumVelocity:(Vector *)velocity
+       acceleration:(Vector *acceleration) {
+     ...
+}
+
+```
