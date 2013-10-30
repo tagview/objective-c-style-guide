@@ -222,7 +222,7 @@ When the first keyword is shorter than the others, indent the later lines by at 
 - (void)position:(Vector *)position
     maximumVelocity:(Vector *)velocity
        acceleration:(Vector *)acceleration {
-     ...
+    ...
 }
 
 ```
