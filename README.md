@@ -30,7 +30,7 @@ typedef enum Solvers : NSUInteger {
 + (Particle *)fixedParticleAtPosition:(Vector *)position;
 
 - (void)initWithPosition:(Vector *)position;
-- (void)initWithPosition:(Vector *)position andVelocity:(Vector *)velocity;
+- (void)initWithPosition:(Vector *)position velocity:(Vector *)velocity;
 
 - (void)addForce:(Vector *)force;
 - (void)integrate;
@@ -52,7 +52,7 @@ typedef enum Solvers : NSUInteger {
 #pragma mark - Initializers
 
 // Designated initializer
-- (id)initWithPosition:(Vector *)position andVelocity:(Vector *)velocity {
+- (id)initWithPosition:(Vector *)position velocity:(Vector *)velocity {
     if (self = [super init]) {
         _friction = 1;
         _position = position;
@@ -65,7 +65,7 @@ typedef enum Solvers : NSUInteger {
 
 - (id)initWithPosition:(Vector *)position {
     Vector *velocity = [[Vector alloc] init];
-    return [self initWithPosition:position andVelocity:velocity];
+    return [self initWithPosition:position velocity:velocity];
 }
 
 
